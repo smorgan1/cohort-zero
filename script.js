@@ -5,9 +5,7 @@ document.body.onkeyup = function(e) {
 }
 
 function newItem() {
-  console.log("Inside newItem");
   var item = document.getElementById("input").value;
-  console.log(item);
   var ul = document.getElementById("list");
   var li = document.createElement("li");
   li.appendChild(document.createTextNode("- " + item));
@@ -24,5 +22,5 @@ document.body.onkeyup = function(e) {
 };
 
 function removeItem(e) {
-  e.target.remove()
+  e.target.parentElement.removeChild(e.target);
 }
